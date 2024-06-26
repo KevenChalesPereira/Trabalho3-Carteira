@@ -9,7 +9,7 @@ namespace Trabalho3_carteira.Model
 {
     public class Carteira
     {
-        [Key]
+        [Key]//salvar
         public string Nome { get; set; }   
         public string Senha { get; set; } = "";
         public double Saldo_total { get; set; }
