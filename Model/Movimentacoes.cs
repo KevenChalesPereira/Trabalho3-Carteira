@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Trabalho3_carteira.Controller;
 
 namespace Trabalho3_carteira.Model
 {
@@ -24,13 +26,47 @@ namespace Trabalho3_carteira.Model
         public short Categoria { get; set; }
 
         [Required]
-        public double Saldo_dia { get; set; }
-
-        [Required]
         [MaxLength(200)]
         public string? Descricao { get; set; }
+        
+        
+        [NotMapped]
+        public string Nome_Tipo
+        {
+           
+            get
+            {
+                if(Tipo == 0)
+                {
+                    return "Depósito";
+                }
+                else {
+                    return "Retirada";
+                }
+            }
 
+        }
 
+        [NotMapped]
+        public string Nome_Categoria
+        {
+            get
+            {
+              List<Categorias>  cat = CategoriaController.Busca_Cat();
+               string nome = "";
+
+                for(int i = 0; i < cat.Count; i++)
+                {
+                    if(Categoria == cat[i].Id)
+                    {
+                        nome =  cat[i].Nome;
+                    }
+                   
+                
+                }
+                return nome;
+            }
+        }
 
     }
 }

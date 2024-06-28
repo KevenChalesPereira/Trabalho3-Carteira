@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Trabalho3_carteira.Data;
 
@@ -11,9 +12,11 @@ using Trabalho3_carteira.Data;
 namespace Trabalho3_carteira.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240627222356_bancofdp")]
+    partial class bancofdp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,6 +77,9 @@ namespace Trabalho3_carteira.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<double>("Saldo_dia")
+                        .HasColumnType("float");
 
                     b.Property<short>("Tipo")
                         .HasColumnType("smallint");

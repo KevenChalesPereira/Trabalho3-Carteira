@@ -8,7 +8,7 @@ using Trabalho3_carteira.Model;
 
 namespace Trabalho3_carteira.Data
 {
-    public class DataContext : DbContext    
+    internal class DataContext : DbContext    
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

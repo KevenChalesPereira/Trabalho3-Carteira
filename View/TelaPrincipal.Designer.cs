@@ -30,18 +30,26 @@
         {
             components = new System.ComponentModel.Container();
             label1 = new Label();
-            label2 = new Label();
+            lblSaldo = new Label();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
-            movimentacoesBindingSource = new BindingSource(components);
-            movimentacoesBindingSource1 = new BindingSource(components);
+            datagMovimentacoes = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Nome_Tipo = new DataGridViewTextBoxColumn();
             valorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             categoriaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Nome_Categoria = new DataGridViewTextBoxColumn();
+            saldodiaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dateTimePicker1 = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            movimentacoesBindingSource = new BindingSource(components);
+            movimentacoesBindingSource1 = new BindingSource(components);
+            dtpData = new DateTimePicker();
+            label2 = new Label();
+            label3 = new Label();
+            lblSaldoDia = new Label();
+            label5 = new Label();
+            ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).BeginInit();
             SuspendLayout();
@@ -55,38 +63,108 @@
             label1.TabIndex = 0;
             label1.Text = "Saldo disponivel:";
             // 
-            // label2
+            // lblSaldo
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(127, 55);
-            label2.Name = "label2";
-            label2.Size = new Size(27, 15);
-            label2.TabIndex = 1;
-            label2.Text = "----";
+            lblSaldo.AutoSize = true;
+            lblSaldo.Location = new Point(153, 55);
+            lblSaldo.Name = "lblSaldo";
+            lblSaldo.Size = new Size(27, 15);
+            lblSaldo.TabIndex = 1;
+            lblSaldo.Text = "----";
             // 
             // button1
             // 
             button1.ForeColor = Color.Red;
-            button1.Location = new Point(38, 85);
+            button1.Location = new Point(12, 415);
             button1.Name = "button1";
             button1.Size = new Size(97, 23);
             button1.TabIndex = 2;
             button1.Text = "movimentação";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // datagMovimentacoes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, valorDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = movimentacoesBindingSource1;
-            dataGridView1.Location = new Point(198, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(543, 150);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            datagMovimentacoes.AllowUserToAddRows = false;
+            datagMovimentacoes.AllowUserToDeleteRows = false;
+            datagMovimentacoes.AutoGenerateColumns = false;
+            datagMovimentacoes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            datagMovimentacoes.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, Nome_Tipo, valorDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, Nome_Categoria, saldodiaDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn });
+            datagMovimentacoes.DataSource = movimentacoesBindingSource;
+            datagMovimentacoes.Location = new Point(237, 55);
+            datagMovimentacoes.Name = "datagMovimentacoes";
+            datagMovimentacoes.ReadOnly = true;
+            datagMovimentacoes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            datagMovimentacoes.RowHeadersVisible = false;
+            datagMovimentacoes.Size = new Size(503, 150);
+            datagMovimentacoes.TabIndex = 3;
+            datagMovimentacoes.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            tipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Nome_Tipo
+            // 
+            Nome_Tipo.DataPropertyName = "Nome_Tipo";
+            Nome_Tipo.HeaderText = "Tipo";
+            Nome_Tipo.Name = "Nome_Tipo";
+            Nome_Tipo.ReadOnly = true;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            categoriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Nome_Categoria
+            // 
+            Nome_Categoria.DataPropertyName = "Nome_Categoria";
+            Nome_Categoria.HeaderText = "Categoria";
+            Nome_Categoria.Name = "Nome_Categoria";
+            Nome_Categoria.ReadOnly = true;
+            // 
+            // saldodiaDataGridViewTextBoxColumn
+            // 
+            saldodiaDataGridViewTextBoxColumn.DataPropertyName = "Saldo_dia";
+            saldodiaDataGridViewTextBoxColumn.HeaderText = "Saldo_dia";
+            saldodiaDataGridViewTextBoxColumn.Name = "saldodiaDataGridViewTextBoxColumn";
+            saldodiaDataGridViewTextBoxColumn.ReadOnly = true;
+            saldodiaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // movimentacoesBindingSource
             // 
@@ -96,60 +174,75 @@
             // 
             movimentacoesBindingSource1.DataSource = typeof(Model.Movimentacoes);
             // 
-            // dataDataGridViewTextBoxColumn
+            // dtpData
             // 
-            dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            dtpData.Format = DateTimePickerFormat.Short;
+            dtpData.Location = new Point(699, 12);
+            dtpData.Margin = new Padding(8);
+            dtpData.MaxDate = new DateTime(2024, 6, 27, 0, 0, 0, 0);
+            dtpData.MinDate = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            dtpData.Name = "dtpData";
+            dtpData.Size = new Size(89, 23);
+            dtpData.TabIndex = 4;
+            dtpData.Value = new DateTime(2024, 6, 27, 0, 0, 0, 0);
+            dtpData.ValueChanged += dtpData_ValueChanged;
             // 
-            // tipoDataGridViewTextBoxColumn
+            // label2
             // 
-            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            label2.AutoSize = true;
+            label2.Location = new Point(127, 55);
+            label2.Name = "label2";
+            label2.Size = new Size(20, 15);
+            label2.TabIndex = 5;
+            label2.Text = "R$";
             // 
-            // valorDataGridViewTextBoxColumn
+            // label3
             // 
-            valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            label3.AutoSize = true;
+            label3.Location = new Point(127, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(20, 15);
+            label3.TabIndex = 8;
+            label3.Text = "R$";
             // 
-            // categoriaDataGridViewTextBoxColumn
+            // lblSaldoDia
             // 
-            categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            lblSaldoDia.AutoSize = true;
+            lblSaldoDia.Location = new Point(153, 85);
+            lblSaldoDia.Name = "lblSaldoDia";
+            lblSaldoDia.Size = new Size(27, 15);
+            lblSaldoDia.TabIndex = 7;
+            lblSaldoDia.Text = "----";
             // 
-            // descricaoDataGridViewTextBoxColumn
+            // label5
             // 
-            descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(43, 12);
-            dateTimePicker1.MaxDate = new DateTime(2024, 6, 26, 0, 0, 0, 0);
-            dateTimePicker1.MinDate = new DateTime(2024, 1, 1, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(78, 23);
-            dateTimePicker1.TabIndex = 4;
-            dateTimePicker1.Value = new DateTime(2024, 6, 26, 0, 0, 0, 0);
+            label5.AutoSize = true;
+            label5.Location = new Point(25, 85);
+            label5.Name = "label5";
+            label5.Size = new Size(75, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Saldo do dia:";
             // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(800, 450);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(lblSaldoDia);
+            Controls.Add(label5);
             Controls.Add(label2);
+            Controls.Add(dtpData);
+            Controls.Add(datagMovimentacoes);
+            Controls.Add(button1);
+            Controls.Add(lblSaldo);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "TelaPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).EndInit();
             ResumeLayout(false);
@@ -159,16 +252,24 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label lblSaldo;
         private Button button1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private DataGridView datagMovimentacoes;
         private BindingSource movimentacoesBindingSource1;
         private BindingSource movimentacoesBindingSource;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpData;
+        private Label label2;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Nome_Tipo;
+        private DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Nome_Categoria;
+        private DataGridViewTextBoxColumn saldodiaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private Label label3;
+        private Label lblSaldoDia;
+        private Label label5;
     }
 }
