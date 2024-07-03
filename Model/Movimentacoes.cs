@@ -25,7 +25,7 @@ namespace Trabalho3_carteira.Model
         [Required]
         public short Categoria { get; set; }
 
-        [Required]
+
         [MaxLength(200)]
         public string? Descricao { get; set; }
         
@@ -66,6 +66,11 @@ namespace Trabalho3_carteira.Model
                 }
                 return nome;
             }
+        }
+
+        public void Editar(int id, DateTime data, short tipo, short cat, double v, string desc)
+        {
+            //TO DO função para editar as movimentações!!!!
         }
 
     }

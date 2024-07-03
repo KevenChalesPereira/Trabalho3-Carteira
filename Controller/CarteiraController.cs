@@ -9,12 +9,5 @@ namespace Trabalho3_carteira.Controller
 {
     internal class CarteiraController 
     {
-        public static string Mostra_SaldoTotal()
-        {
-            using (DataContext db = new DataContext())
-            {
-                return db.Carteira.ToList()[0].Saldo_total.ToString();
-            }
-        } 
     }
 }

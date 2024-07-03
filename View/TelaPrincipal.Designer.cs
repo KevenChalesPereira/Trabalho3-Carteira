@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             lblSaldo = new Label();
             button1 = new Button();
@@ -40,7 +41,6 @@
             valorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             categoriaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Nome_Categoria = new DataGridViewTextBoxColumn();
-            saldodiaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             movimentacoesBindingSource = new BindingSource(components);
             movimentacoesBindingSource1 = new BindingSource(components);
@@ -49,6 +49,7 @@
             label3 = new Label();
             lblSaldoDia = new Label();
             label5 = new Label();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).BeginInit();
@@ -86,17 +87,31 @@
             // 
             datagMovimentacoes.AllowUserToAddRows = false;
             datagMovimentacoes.AllowUserToDeleteRows = false;
+            datagMovimentacoes.AllowUserToResizeColumns = false;
+            datagMovimentacoes.AllowUserToResizeRows = false;
             datagMovimentacoes.AutoGenerateColumns = false;
+            datagMovimentacoes.BackgroundColor = SystemColors.ControlLight;
+            datagMovimentacoes.BorderStyle = BorderStyle.Fixed3D;
+            datagMovimentacoes.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             datagMovimentacoes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datagMovimentacoes.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, Nome_Tipo, valorDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, Nome_Categoria, saldodiaDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn });
+            datagMovimentacoes.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, Nome_Tipo, valorDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, Nome_Categoria, descricaoDataGridViewTextBoxColumn });
             datagMovimentacoes.DataSource = movimentacoesBindingSource;
             datagMovimentacoes.Location = new Point(237, 55);
+            datagMovimentacoes.MultiSelect = false;
             datagMovimentacoes.Name = "datagMovimentacoes";
             datagMovimentacoes.ReadOnly = true;
             datagMovimentacoes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             datagMovimentacoes.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new Font("High Tower Text", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            datagMovimentacoes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datagMovimentacoes.Size = new Size(503, 150);
-            datagMovimentacoes.TabIndex = 3;
+            
+            datagMovimentacoes.CellClick += datagMovimentacoes_CellClick;
             datagMovimentacoes.CellContentClick += dataGridView1_CellContentClick;
             // 
             // idDataGridViewTextBoxColumn
@@ -151,14 +166,6 @@
             Nome_Categoria.Name = "Nome_Categoria";
             Nome_Categoria.ReadOnly = true;
             // 
-            // saldodiaDataGridViewTextBoxColumn
-            // 
-            saldodiaDataGridViewTextBoxColumn.DataPropertyName = "Saldo_dia";
-            saldodiaDataGridViewTextBoxColumn.HeaderText = "Saldo_dia";
-            saldodiaDataGridViewTextBoxColumn.Name = "saldodiaDataGridViewTextBoxColumn";
-            saldodiaDataGridViewTextBoxColumn.ReadOnly = true;
-            saldodiaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // descricaoDataGridViewTextBoxColumn
             // 
             descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
@@ -179,7 +186,6 @@
             dtpData.Format = DateTimePickerFormat.Short;
             dtpData.Location = new Point(699, 12);
             dtpData.Margin = new Padding(8);
-            dtpData.MaxDate = new DateTime(2024, 6, 27, 0, 0, 0, 0);
             dtpData.MinDate = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             dtpData.Name = "dtpData";
             dtpData.Size = new Size(89, 23);
@@ -223,12 +229,24 @@
             label5.TabIndex = 6;
             label5.Text = "Saldo do dia:";
             // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(665, 211);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 9;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Visible = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEditar);
             Controls.Add(label3);
             Controls.Add(lblSaldoDia);
             Controls.Add(label5);
@@ -242,6 +260,7 @@
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
+            Load += TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).EndInit();
@@ -271,5 +290,6 @@
         private Label label3;
         private Label lblSaldoDia;
         private Label label5;
+        private Button btnEditar;
     }
 }
