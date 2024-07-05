@@ -28,47 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            button3 = new Button();
+            button2 = new Button();
             button1 = new Button();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            label3 = new Label();
+            textBox3 = new TextBox();
             SuspendLayout();
+            // 
+            // button3
+            // 
+            button3.Location = new Point(258, 169);
+            button3.Name = "button3";
+            button3.Size = new Size(45, 29);
+            button3.TabIndex = 13;
+            button3.Text = "👁️‍🗨️";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(258, 104);
+            button2.Name = "button2";
+            button2.Size = new Size(45, 29);
+            button2.TabIndex = 12;
+            button2.Text = "👁️‍🗨️";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(209, 204);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 11;
+            button1.Text = "Salvar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(12, 170);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(240, 27);
+            textBox2.TabIndex = 10;
+            textBox2.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(14, 147);
+            label2.Name = "label2";
+            label2.Size = new Size(127, 20);
+            label2.TabIndex = 9;
+            label2.Text = "Confirme a senha:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(12, 106);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(240, 27);
+            textBox1.TabIndex = 8;
+            textBox1.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(149, 190);
+            label1.Location = new Point(12, 83);
             label1.Name = "label1";
-            label1.Size = new Size(248, 32);
-            label1.TabIndex = 0;
-            label1.Text = "colocar a senha aqui";
-            label1.Click += label1_Click;
+            label1.Size = new Size(121, 20);
+            label1.TabIndex = 7;
+            label1.Text = "Digite sua senha:";
             // 
-            // button1
+            // label3
             // 
-            button1.Location = new Point(169, 300);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 20);
+            label3.TabIndex = 14;
+            label3.Text = "Insira seu nome:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(14, 38);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(238, 27);
+            textBox3.TabIndex = 15;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // TelaInicial
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(598, 450);
+            ClientSize = new Size(312, 280);
+            Controls.Add(textBox3);
+            Controls.Add(label3);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(textBox2);
+            Controls.Add(label2);
+            Controls.Add(textBox1);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaInicial";
-            Text = "TelaInicial";
+            Text = "Defina seu nome e senha:";
+            Load += TelaInicial_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Button button3;
+        private Button button2;
         private Button button1;
+        private TextBox textBox2;
+        private Label label2;
+        private TextBox textBox1;
+        private Label label1;
+        private Label label3;
+        private TextBox textBox3;
     }
 }
