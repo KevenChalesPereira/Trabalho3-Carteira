@@ -14,9 +14,11 @@ namespace Trabalho3_carteira.View
 {
     public partial class TelaInicial : Form
     {
+        
         public TelaInicial()
         {
             InitializeComponent();
+            this.Visible = true;
         }
 
         private void TelaInicial_Load(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Trabalho3_carteira.View
 
         }
 
-        static void conf(string? sen, string? con)
+        static int conf(string? sen, string? con)
         {
             bool bEqual = false;
             if (con.Length == sen.Length)
@@ -61,12 +63,13 @@ namespace Trabalho3_carteira.View
             if (bEqual)
             {
                 MessageBox.Show("Senha correta!");
-                //Console.WriteLine(sen);
-                //Console.WriteLine(con);
+                return 1;
+                
+                
             }
             else
                 MessageBox.Show("Senha incorreta!");
-
+            return 0;
         }
 
 
@@ -97,9 +100,30 @@ namespace Trabalho3_carteira.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string senha = ComputeSha256Hash(textBox1.Text);
-            string teste = ComputeSha256Hash(textBox2.Text);
-            conf(senha, teste);
+
+            if (string.IsNullOrEmpty(textBox1.Text) == true)
+            {
+                MessageBox.Show("A Senha não deve ser nula");
+            } else if (string.IsNullOrEmpty(textBox2.Text) == true)
+            {
+                MessageBox.Show("A Senha não deve ser nula");
+            } else {
+
+                string senha = ComputeSha256Hash(textBox1.Text);
+                string teste = ComputeSha256Hash(textBox2.Text);
+
+               
+
+                if (conf(senha, teste) == 1){
+                    this.Visible = false;
+                    TelaSenha t = new TelaSenha();
+                    t.ShowDialog();
+                }
+
+
+            }
+          
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
