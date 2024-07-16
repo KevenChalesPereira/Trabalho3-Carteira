@@ -27,8 +27,21 @@ namespace Trabalho3_carteira.View
         private void TelaCadastraCategoria_Load(object sender, EventArgs e)
         {
             DataContext db = new DataContext();
-            var maxId = db.Categorias.Max(categoria => categoria.Id);
-            var nextId = maxId + 1;
+            int nextId;
+
+            // Verifica se existem categorias na tabela
+            if (db.Categorias.Any())
+            {
+                // Se houver categorias, pegar o próximo ID disponível
+                var maxId = db.Categorias.Max(categoria => categoria.Id);
+                nextId = maxId + 1;
+            }
+            else
+            {
+                // Se não houver categorias, atribuir o valor 1
+                nextId = 1;
+            }
+
             txtID.Text = nextId.ToString();
             txtID.Enabled = false;
         }

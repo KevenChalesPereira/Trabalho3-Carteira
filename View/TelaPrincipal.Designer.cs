@@ -190,7 +190,6 @@
             dtpData.Name = "dtpData";
             dtpData.Size = new Size(89, 23);
             dtpData.TabIndex = 4;
-            dtpData.Value = new DateTime(2024, 6, 27, 0, 0, 0, 0);
             dtpData.ValueChanged += dtpData_ValueChanged;
             // 
             // label2

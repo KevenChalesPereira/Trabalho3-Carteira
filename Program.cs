@@ -21,17 +21,17 @@ namespace Trabalho3_carteira
             List<Carteira> carteirauser = new List<Carteira>();
             carteirauser = CarteiraController.versenha();
 
-            if (carteirauser[0].Senha == null)
-            {
-                TelaInicial ti = new TelaInicial();
-                Application.Run(ti);
+            //if (carteirauser[0].Senha == null)
+            //{
+            //    TelaInicial ti = new TelaInicial();
+            //    Application.Run(ti);
 
-            }
-            else
-            {
-                Application.Run(new TelaSenha());
+            //}
+            //else
+            //{
+              Application.Run(new TelaPrincipal());
 
-            }
+            //}
             //To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 

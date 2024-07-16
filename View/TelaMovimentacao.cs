@@ -36,7 +36,7 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
-                mov.Data = DateTime.Now;
+                mov.Data = dtpData.Value;
                 mov.Tipo = 0;
                 mov.Valor = double.Parse(txtValor.Text);
                 mov.Categoria = 0;//(Int16)cbCategoria.SelectedValue;
@@ -55,8 +55,13 @@ namespace Trabalho3_carteira.View
 
         private void bntCadastraCategoria_Click(object sender, EventArgs e)
         {
+            this.Close();
             TelaCadastraCategoria abrirform = new TelaCadastraCategoria();
-            abrirform.ShowDialog();
+            abrirform.ShowDialog(); 
+
+
+
+
         }
 
         private void bntRetirada_Click(object sender, EventArgs e)
@@ -66,7 +71,7 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
-                mov.Data = DateTime.Today;
+                mov.Data = dtpData.Value;
                 mov.Tipo = 1;
                 mov.Valor = double.Parse(txtValor.Text);
                 mov.Categoria = 1;//(Int16)cbCategoria.SelectedValue;
