@@ -8,12 +8,19 @@ using Trabalho3_carteira.Model;
 
 namespace Trabalho3_carteira.Data
 {
-    internal class DataContext : DbContext    
+    public class DataContext : DbContext
     {
+           
+
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("Data Source=localhost\\SQLSERVER2014ECE; Initial Catalog=DBCarteira; Integrated Security=SSPI; Trust Server Certificate=True");
-            optionsBuilder.UseSqlServer("Data Source=localhost,1401; Initial Catalog=DBCarteira; User=sa; password=Senh@123; Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost,1401; Initial Catalog=DBCarteira; User ID=sa; Password=Senh@123 ; TrustServerCertificate=True");
+
+
+
         }
 
         public DbSet<Carteira> Carteira { get; set; }

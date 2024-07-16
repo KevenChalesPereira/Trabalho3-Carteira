@@ -32,7 +32,7 @@ namespace Trabalho3_carteira.View
 
         private void dtpData_ValueChanged(object sender, EventArgs e)
         {
-            DateTime data = dtpData.Value.Date;
+            DateTime data = dtpData.Value;
             datagMovimentacoes.DataSource = MovimentacoesController.Mostra_Movimentacoes(data);
             lblSaldoDia.Text = MovimentacoesController.Mostra_Saldo_Dia(data).ToString();
 

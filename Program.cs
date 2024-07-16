@@ -12,23 +12,30 @@ namespace Trabalho3_carteira
         [STAThread]
         static void Main()
         {
+            //desabilitei a tela de senha apenas para realizar testes
+
+            //Application.Run(new TelaMovimentacao());
+
+
             ApplicationConfiguration.Initialize();
             List<Carteira> carteirauser = new List<Carteira>();
             carteirauser = CarteiraController.versenha();
-             
+
             if (carteirauser[0].Senha == null)
             {
                 TelaInicial ti = new TelaInicial();
                 Application.Run(ti);
 
-            } else {
+            }
+            else
+            {
                 Application.Run(new TelaSenha());
 
             }
-            // To customize application configuration such as set high DPI settings or default font,
+            //To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-           
-            
+
+
         }
     }
 }

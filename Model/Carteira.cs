@@ -10,9 +10,9 @@ namespace Trabalho3_carteira.Model
     public class Carteira
     {
         [Key]//salvar
-        public string Nome { get; set; }   
-        public string Senha { get; set; } 
-       
+        public string Nome { get; set; }
+        public string Senha { get; set; }
+
 
     }
 

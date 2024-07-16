@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using Trabalho3_carteira.Data;
+using Trabalho3_carteira.Model;
 
 
 namespace Trabalho3_carteira.View
@@ -121,10 +123,26 @@ namespace Trabalho3_carteira.View
                 }
 
 
+            }//realiza o cadastro de usuário e encerra a tela abrindo a inicial
+            try
+            {
+                DataContext db = new DataContext();
+                Carteira user = new Carteira();
+                user.Nome = textBox1.Text;
+                user.Senha = textBox2.Text;
+                db.Carteira.Add(user);
+                db.SaveChanges();
+                MessageBox.Show("Cadastro realizado com Sucesso.");
+                TelaPrincipal abrirform = new TelaPrincipal();
+                abrirform.ShowDialog();
+                this.Close();
             }
-          
-            
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar movimentação: {ex.Message}");
+            }
+
+}
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {

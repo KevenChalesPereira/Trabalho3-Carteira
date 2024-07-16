@@ -25,11 +25,11 @@ namespace Trabalho3_carteira.Controller
                 double soma = 0;
                 double subt = 0;
 
-                soma = db.Movimentacoes.Where(x => x.Data == data && x.Tipo == 0).Sum(x=> x.Valor); // valores inseridos
+                soma = db.Movimentacoes.Where(x => x.Data == data && x.Tipo == 0).Sum(x => x.Valor); // valores inseridos
                 subt = db.Movimentacoes.Where(x => x.Data == data && x.Tipo == 1).Sum(x => x.Valor); // valores retirados
-                
 
-                return soma + ( -subt );
+
+                return soma + (-subt);
 
             }
         }
@@ -41,13 +41,15 @@ namespace Trabalho3_carteira.Controller
                 double soma = 0;
                 double subt = 0;
 
-                soma = db.Movimentacoes.Where(x=>   x.Tipo == 0).Sum(x => x.Valor); // valores inseridos
-                subt = db.Movimentacoes.Where(x =>  x.Tipo == 1).Sum(x => x.Valor); // valores retirados
+                soma = db.Movimentacoes.Where(x => x.Tipo == 0).Sum(x => x.Valor); // valores inseridos
+                subt = db.Movimentacoes.Where(x => x.Tipo == 1).Sum(x => x.Valor); // valores retirados
 
 
                 return soma + (-subt);
 
             }
         }
+
+        
     }
 }

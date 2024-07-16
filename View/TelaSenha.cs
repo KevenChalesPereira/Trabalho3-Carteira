@@ -16,5 +16,31 @@ namespace Trabalho3_carteira.View
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.ShowDialog();
+            this.Close();
+        }
+
+        private void TelaSenha_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntTelaMovimentacao_Click(object sender, EventArgs e)
+        {
+            TelaMovimentacao tela = new TelaMovimentacao();
+            tela.ShowDialog();
+            this.Close();
+        }
+
+        private void bntCriaSenha_Click(object sender, EventArgs e)
+        {
+            TelaInicial tela = new TelaInicial();
+            tela.ShowDialog();
+            this.Close();
+        }
     }
 }
