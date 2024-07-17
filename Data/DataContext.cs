@@ -16,8 +16,8 @@ namespace Trabalho3_carteira.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost\\SQLSERVER2014ECE; Initial Catalog=DBCarteira; Integrated Security=SSPI; Trust Server Certificate=True");
-            //optionsBuilder.UseSqlServer("Data Source=localhost,1401; Initial Catalog=DBCarteira; User ID=sa; Password=Senh@123 ; TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer("Data Source=localhost\\SQLSERVER2014ECE; Initial Catalog=DBCarteira; Integrated Security=SSPI; Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost,1401; Initial Catalog=DBCarteira; User ID=sa; Password=Senh@123 ; TrustServerCertificate=True");
 
 
 

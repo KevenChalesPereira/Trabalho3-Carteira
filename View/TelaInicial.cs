@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using Trabalho3_carteira.Data;
+using Trabalho3_carteira.Controller;
 using Trabalho3_carteira.Model;
 
 
@@ -16,7 +16,7 @@ namespace Trabalho3_carteira.View
 {
     public partial class TelaInicial : Form
     {
-        
+
         public TelaInicial()
         {
             InitializeComponent();
@@ -64,13 +64,13 @@ namespace Trabalho3_carteira.View
 
             if (bEqual)
             {
-                MessageBox.Show("Senha correta!");
+                MessageBox.Show("Cadastro criado!");
                 return 1;
-                
-                
+
+
             }
             else
-                MessageBox.Show("Senha incorreta!");
+                MessageBox.Show("As senhas não conferem!");
             return 0;
         }
 
@@ -106,43 +106,42 @@ namespace Trabalho3_carteira.View
             if (string.IsNullOrEmpty(textBox1.Text) == true)
             {
                 MessageBox.Show("A Senha não deve ser nula");
-            } else if (string.IsNullOrEmpty(textBox2.Text) == true)
+            }
+            else if (string.IsNullOrEmpty(textBox2.Text) == true)
             {
                 MessageBox.Show("A Senha não deve ser nula");
-            } else {
+            }
+            else if (string.IsNullOrEmpty(textBox3.Text) == true)
+            {
+
+                MessageBox.Show("Insira um nome");
+
+            }
+            else
+            {
 
                 string senha = ComputeSha256Hash(textBox1.Text);
                 string teste = ComputeSha256Hash(textBox2.Text);
+                string nome = (textBox3.Text);
 
-               
+                Carteira usercarteira = new Carteira();
+                usercarteira.Nome = nome;
+                usercarteira.Senha = senha;
 
-                if (conf(senha, teste) == 1){
+                if (conf(senha, teste) == 1)
+                {
+
+                    CarteiraController.Salvar(usercarteira);
                     this.Visible = false;
                     TelaSenha t = new TelaSenha();
                     t.ShowDialog();
                 }
 
 
-            }//realiza o cadastro de usuário e encerra a tela abrindo a inicial
-            try
-            {
-                DataContext db = new DataContext();
-                Carteira user = new Carteira();
-                user.Nome = textBox1.Text;
-                user.Senha = textBox2.Text;
-                db.Carteira.Add(user);
-                db.SaveChanges();
-                MessageBox.Show("Cadastro realizado com Sucesso.");
-                TelaPrincipal abrirform = new TelaPrincipal();
-                abrirform.ShowDialog();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao salvar movimentação: {ex.Message}");
             }
 
-}
+
+        }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
