@@ -14,6 +14,7 @@ namespace Trabalho3_carteira.Model
         public int Id {  get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
         [Required]

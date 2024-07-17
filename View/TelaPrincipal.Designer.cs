@@ -43,16 +43,19 @@
             Nome_Categoria = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             movimentacoesBindingSource = new BindingSource(components);
-            movimentacoesBindingSource1 = new BindingSource(components);
             dtpData = new DateTimePicker();
             label2 = new Label();
             label3 = new Label();
             lblSaldoDia = new Label();
             label5 = new Label();
             btnEditar = new Button();
+            movimentacoesBindingSource1 = new BindingSource(components);
+            menuStrip1 = new MenuStrip();
+            alterarSenhaToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -82,6 +85,7 @@
             button1.TabIndex = 2;
             button1.Text = "movimentação";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // datagMovimentacoes
             // 
@@ -110,7 +114,7 @@
             datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             datagMovimentacoes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datagMovimentacoes.Size = new Size(503, 150);
-            
+            datagMovimentacoes.TabIndex = 10;
             datagMovimentacoes.CellClick += datagMovimentacoes_CellClick;
             datagMovimentacoes.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -177,10 +181,6 @@
             // 
             movimentacoesBindingSource.DataSource = typeof(Model.Movimentacoes);
             // 
-            // movimentacoesBindingSource1
-            // 
-            movimentacoesBindingSource1.DataSource = typeof(Model.Movimentacoes);
-            // 
             // dtpData
             // 
             dtpData.Format = DateTimePickerFormat.Short;
@@ -239,6 +239,26 @@
             btnEditar.Visible = false;
             btnEditar.Click += btnEditar_Click;
             // 
+            // movimentacoesBindingSource1
+            // 
+            movimentacoesBindingSource1.DataSource = typeof(Model.Movimentacoes);
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { alterarSenhaToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 11;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // alterarSenhaToolStripMenuItem
+            // 
+            alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
+            alterarSenhaToolStripMenuItem.Size = new Size(88, 20);
+            alterarSenhaToolStripMenuItem.Text = "Alterar senha";
+            alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,7 +275,9 @@
             Controls.Add(button1);
             Controls.Add(lblSaldo);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MainMenuStrip = menuStrip1;
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
@@ -263,6 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,7 +297,6 @@
         private Label lblSaldo;
         private Button button1;
         private DataGridView datagMovimentacoes;
-        private BindingSource movimentacoesBindingSource1;
         private BindingSource movimentacoesBindingSource;
         private DateTimePicker dtpData;
         private Label label2;
@@ -290,5 +313,8 @@
         private Label lblSaldoDia;
         private Label label5;
         private Button btnEditar;
+        private BindingSource movimentacoesBindingSource1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem alterarSenhaToolStripMenuItem;
     }
 }

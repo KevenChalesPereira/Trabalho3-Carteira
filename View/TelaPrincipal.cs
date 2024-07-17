@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Trabalho3_carteira.Controller;
 using Trabalho3_carteira.Model;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Trabalho3_carteira.View
 {
@@ -32,20 +33,14 @@ namespace Trabalho3_carteira.View
 
         private void dtpData_ValueChanged(object sender, EventArgs e)
         {
-            DateTime data = dtpData.Value;
-            datagMovimentacoes.DataSource = MovimentacoesController.Mostra_Movimentacoes(data);
-            lblSaldoDia.Text = MovimentacoesController.Mostra_Saldo_Dia(data).ToString();
+            atualiza_dtg();
 
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
 
-            DateTime data = dtpData.Value.Date;
-            datagMovimentacoes.DataSource = MovimentacoesController.Mostra_Movimentacoes(data);
-
-            lblSaldo.Text = MovimentacoesController.Mostra_Saldo_Total().ToString();
-            lblSaldoDia.Text = MovimentacoesController.Mostra_Saldo_Dia(data).ToString();
+            atualiza_dtg();
 
             dtpData.MaxDate = DateTime.Today;
             dtpData.Value = DateTime.Today;
@@ -61,6 +56,29 @@ namespace Trabalho3_carteira.View
         {
             Movimentacoes selecionada = (Movimentacoes)datagMovimentacoes.SelectedRows[0].DataBoundItem;
             new TelaEditar(selecionada).ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            new TelaMovimentacao().Show();
+            this.Close();
+            atualiza_dtg();
+
+        }
+
+        public void atualiza_dtg()
+        {
+            DateTime data = dtpData.Value.Date;
+            datagMovimentacoes.DataSource = MovimentacoesController.Mostra_Movimentacoes(data);
+
+            lblSaldo.Text = MovimentacoesController.Mostra_Saldo_Total().ToString();
+            lblSaldoDia.Text = MovimentacoesController.Mostra_Saldo_Dia(data).ToString();
+        }
+
+        private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

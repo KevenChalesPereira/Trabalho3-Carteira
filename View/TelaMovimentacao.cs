@@ -36,7 +36,7 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
-                mov.Data = dtpData.Value;
+                mov.Data = dtpData.Value.Date;
                 mov.Tipo = 0;
                 mov.Valor = double.Parse(txtValor.Text);
                 mov.Categoria = 0;//(Int16)cbCategoria.SelectedValue;
@@ -45,6 +45,8 @@ namespace Trabalho3_carteira.View
                 db.Movimentacoes.Add(mov);
                 db.SaveChanges();
                 MessageBox.Show("Movimentação salva com sucesso.");
+                
+                new TelaPrincipal().Show();
             }
             catch (Exception ex)
             {
@@ -71,7 +73,7 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
-                mov.Data = dtpData.Value;
+                mov.Data = dtpData.Value.Date;
                 mov.Tipo = 1;
                 mov.Valor = double.Parse(txtValor.Text);
                 mov.Categoria = 1;//(Int16)cbCategoria.SelectedValue;
@@ -80,6 +82,7 @@ namespace Trabalho3_carteira.View
                 db.Movimentacoes.Add(mov);
                 db.SaveChanges();
                 MessageBox.Show("Movimentação salva com sucesso.");
+                Close();
             }
             catch (Exception ex)
             {
