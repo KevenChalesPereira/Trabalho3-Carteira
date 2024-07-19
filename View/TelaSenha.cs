@@ -19,7 +19,7 @@ namespace Trabalho3_carteira.View
         {
             InitializeComponent();
         }
-
+        //apague este comentário depois
 
 
         private void TelaSenha_Load(object sender, EventArgs e)
