@@ -24,7 +24,7 @@ namespace Trabalho3_carteira.Model
         public double Valor { get; set; }
 
         [Required]
-        public short Categoria { get; set; }
+        public int Categoria { get; set; }
 
 
         [MaxLength(200)]

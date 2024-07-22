@@ -32,22 +32,32 @@ namespace Trabalho3_carteira.View
 
             if (edicao.Tipo == 1)
             {
-                radioButton1.Select();
+                rdSaque.Select();
             }
             else
             {
-                radioButton2.Select();
+                rdDeposito.Select();
             }
 
-            comboBox2.DataSource = CategoriaController.Busca_Cat();
-            comboBox2.SelectedValue = (int)edicao.Categoria;
+            cbCategoriaEditar.DataSource = CategoriaController.Busca_Cat();
+            cbCategoriaEditar.SelectedValue = (int)edicao.Categoria;
 
 
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            Movimentacoes movimentacoes = new Movimentacoes();
 
+            movimentacoes.Id = edicao.Id;
+            movimentacoes.Valor = double.Parse(txtValor.Text);
+           
+
+            if (rdDeposito.Checked){
+
+                movimentacoes.Tipo = 0;
+            }
+            else { movimentacoes.Tipo = 1; }
         }
     }
 }

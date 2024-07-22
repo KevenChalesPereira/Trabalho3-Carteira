@@ -33,10 +33,10 @@
             label3 = new Label();
             label4 = new Label();
             txtValor = new TextBox();
-            comboBox2 = new ComboBox();
+            cbCategoriaEditar = new ComboBox();
             txtDesc = new TextBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rdSaque = new RadioButton();
+            rdDeposito = new RadioButton();
             panel1 = new Panel();
             btnSalvar = new Button();
             panel1.SuspendLayout();
@@ -45,100 +45,111 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(11, 30);
+            label1.Location = new Point(16, 50);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(42, 15);
+            label1.Size = new Size(66, 25);
             label1.TabIndex = 0;
             label1.Text = "Valor : ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 167);
+            label2.Location = new Point(16, 278);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(64, 15);
+            label2.Size = new Size(97, 25);
             label2.TabIndex = 1;
             label2.Text = "Descrição :";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(11, 63);
+            label3.Location = new Point(16, 105);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(33, 15);
+            label3.Size = new Size(52, 25);
             label3.TabIndex = 2;
             label3.Text = "Tipo ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(5, 96);
+            label4.Location = new Point(7, 160);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(58, 15);
+            label4.Size = new Size(88, 25);
             label4.TabIndex = 3;
             label4.Text = "Categoria";
             // 
             // txtValor
             // 
-            txtValor.Location = new Point(69, 27);
+            txtValor.Location = new Point(99, 45);
+            txtValor.Margin = new Padding(4, 5, 4, 5);
             txtValor.Name = "txtValor";
-            txtValor.Size = new Size(264, 23);
+            txtValor.Size = new Size(375, 31);
             txtValor.TabIndex = 4;
             // 
-            // comboBox2
+            // cbCategoriaEditar
             // 
-            comboBox2.DisplayMember = "Nome";
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(69, 93);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(264, 23);
-            comboBox2.TabIndex = 6;
-            comboBox2.ValueMember = "Id";
+            cbCategoriaEditar.DisplayMember = "Nome";
+            cbCategoriaEditar.FormattingEnabled = true;
+            cbCategoriaEditar.Location = new Point(99, 155);
+            cbCategoriaEditar.Margin = new Padding(4, 5, 4, 5);
+            cbCategoriaEditar.Name = "cbCategoriaEditar";
+            cbCategoriaEditar.Size = new Size(375, 33);
+            cbCategoriaEditar.TabIndex = 6;
+            cbCategoriaEditar.ValueMember = "Id";
             // 
             // txtDesc
             // 
-            txtDesc.Location = new Point(69, 159);
+            txtDesc.Location = new Point(99, 265);
+            txtDesc.Margin = new Padding(4, 5, 4, 5);
             txtDesc.Multiline = true;
             txtDesc.Name = "txtDesc";
-            txtDesc.Size = new Size(264, 105);
+            txtDesc.Size = new Size(375, 172);
             txtDesc.TabIndex = 7;
             // 
-            // radioButton1
+            // rdSaque
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(3, 5);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(57, 19);
-            radioButton1.TabIndex = 8;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Saque";
-            radioButton1.UseVisualStyleBackColor = true;
+            rdSaque.AutoSize = true;
+            rdSaque.Location = new Point(4, 8);
+            rdSaque.Margin = new Padding(4, 5, 4, 5);
+            rdSaque.Name = "rdSaque";
+            rdSaque.Size = new Size(86, 29);
+            rdSaque.TabIndex = 8;
+            rdSaque.TabStop = true;
+            rdSaque.Text = "Saque";
+            rdSaque.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdDeposito
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(66, 5);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(72, 19);
-            radioButton2.TabIndex = 9;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Depósito";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdDeposito.AutoSize = true;
+            rdDeposito.Location = new Point(94, 8);
+            rdDeposito.Margin = new Padding(4, 5, 4, 5);
+            rdDeposito.Name = "rdDeposito";
+            rdDeposito.Size = new Size(110, 29);
+            rdDeposito.TabIndex = 9;
+            rdDeposito.TabStop = true;
+            rdDeposito.Text = "Depósito";
+            rdDeposito.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            panel1.Controls.Add(radioButton1);
-            panel1.Controls.Add(radioButton2);
-            panel1.Location = new Point(69, 63);
+            panel1.Controls.Add(rdSaque);
+            panel1.Controls.Add(rdDeposito);
+            panel1.Location = new Point(99, 105);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(137, 23);
+            panel1.Size = new Size(196, 38);
             panel1.TabIndex = 10;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(135, 304);
+            btnSalvar.Location = new Point(193, 507);
+            btnSalvar.Margin = new Padding(4, 5, 4, 5);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 32);
+            btnSalvar.Size = new Size(107, 53);
             btnSalvar.TabIndex = 11;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -146,18 +157,19 @@
             // 
             // TelaEditar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 450);
+            ClientSize = new Size(496, 750);
             Controls.Add(btnSalvar);
             Controls.Add(panel1);
             Controls.Add(txtDesc);
-            Controls.Add(comboBox2);
+            Controls.Add(cbCategoriaEditar);
             Controls.Add(txtValor);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "TelaEditar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar";
@@ -175,10 +187,10 @@
         private Label label3;
         private Label label4;
         private TextBox txtValor;
-        private ComboBox comboBox2;
+        private ComboBox cbCategoriaEditar;
         private TextBox txtDesc;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rdSaque;
+        private RadioButton rdDeposito;
         private Panel panel1;
         private Button btnSalvar;
     }

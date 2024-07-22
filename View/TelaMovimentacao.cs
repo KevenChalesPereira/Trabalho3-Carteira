@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabalho3_carteira.Controller;
 using Trabalho3_carteira.Data;
 using Trabalho3_carteira.Model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -22,12 +23,9 @@ namespace Trabalho3_carteira.View
 
         public void TelaMovimentacao_Load(object sender, EventArgs e)
         { //Preenche o Combo box
-            DataContext db = new DataContext();
-            var cat = from Nome in db.Categorias
-                      select Nome;
-            cbCategoria.DataSource = cat.ToList();
-            cbCategoria.DisplayMember = "Nome";
-            cbCategoria.ValueMember = "Id";
+            
+            cbCategoria.DataSource = CategoriaController.Busca_Cat();
+           
         }
         private void bntDeposito_Click(object sender, EventArgs e)
         {
@@ -36,10 +34,12 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
+
+               
                 mov.Data = dtpData.Value.Date;
                 mov.Tipo = 0;
                 mov.Valor = double.Parse(txtValor.Text);
-                mov.Categoria = 0;//(Int16)cbCategoria.SelectedValue;
+                mov.Categoria = 0; //cbCategoria.;
                 mov.Descricao = txtDescricao.Text;
                 //Nome_tipo e Nome_categoria, não podem ser inseridas, apenas leitura
                 db.Movimentacoes.Add(mov);
