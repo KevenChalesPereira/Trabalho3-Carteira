@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             lblSaldo = new Label();
             button1 = new Button();
@@ -52,6 +52,7 @@
             movimentacoesBindingSource1 = new BindingSource(components);
             menuStrip1 = new MenuStrip();
             alterarSenhaToolStripMenuItem = new ToolStripMenuItem();
+            bntExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource1).BeginInit();
@@ -106,12 +107,12 @@
             datagMovimentacoes.ReadOnly = true;
             datagMovimentacoes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             datagMovimentacoes.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new Font("High Tower Text", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new Font("High Tower Text", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             datagMovimentacoes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datagMovimentacoes.Size = new Size(503, 150);
             datagMovimentacoes.TabIndex = 10;
@@ -259,12 +260,24 @@
             alterarSenhaToolStripMenuItem.Text = "Alterar senha";
             alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
             // 
+            // bntExcluir
+            // 
+            bntExcluir.Location = new Point(584, 211);
+            bntExcluir.Name = "bntExcluir";
+            bntExcluir.Size = new Size(75, 23);
+            bntExcluir.TabIndex = 12;
+            bntExcluir.Text = "Excluir";
+            bntExcluir.UseVisualStyleBackColor = true;
+            bntExcluir.Visible = false;
+            bntExcluir.Click += button2_Click;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(800, 450);
+            Controls.Add(bntExcluir);
             Controls.Add(btnEditar);
             Controls.Add(label3);
             Controls.Add(lblSaldoDia);
@@ -316,5 +329,6 @@
         private BindingSource movimentacoesBindingSource1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem alterarSenhaToolStripMenuItem;
+        private Button bntExcluir;
     }
 }

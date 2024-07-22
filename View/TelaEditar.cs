@@ -49,8 +49,15 @@ namespace Trabalho3_carteira.View
         {
             Movimentacoes movimentacoes = new Movimentacoes();
 
+            var catEdit = cbCategoriaEditar.SelectedItem as Categorias;
+
             movimentacoes.Id = edicao.Id;
+            movimentacoes.Data = edicao.Data; 
             movimentacoes.Valor = double.Parse(txtValor.Text);
+            movimentacoes.Categoria = catEdit.Id;
+            movimentacoes.Descricao = txtDesc.Text;
+
+
            
 
             if (rdDeposito.Checked){
@@ -58,6 +65,10 @@ namespace Trabalho3_carteira.View
                 movimentacoes.Tipo = 0;
             }
             else { movimentacoes.Tipo = 1; }
+
+            MovimentacoesController.Editar(movimentacoes);
+            new TelaPrincipal().Show();
+            this.Close();
         }
     }
 }

@@ -49,7 +49,25 @@ namespace Trabalho3_carteira.Controller
 
             }
         }
-
+        public static void Editar(Movimentacoes mov)
+        {
+            using (DataContext db = new DataContext())
+            {
+                db.Movimentacoes.Update(mov);
+                db.SaveChanges();
+            }
+        }
+        public static void Excluir (Movimentacoes movimentacoes)
+        {
+            using (DataContext db = new DataContext()) 
+            {
+                if (db.Movimentacoes.Any(x => x.Id == movimentacoes.Id))
+                {
+                    db.Movimentacoes.Remove(movimentacoes);                  
+                    db.SaveChanges();   
+                }
+            }  
+        }
         
     }
 }

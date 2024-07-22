@@ -147,5 +147,10 @@ namespace Trabalho3_carteira.View
         {
 
         }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

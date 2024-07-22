@@ -35,11 +35,12 @@ namespace Trabalho3_carteira.View
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
 
+                var categoriaSelecionada = cbCategoria.SelectedItem as Categorias;
                
                 mov.Data = dtpData.Value.Date;
                 mov.Tipo = 0;
                 mov.Valor = double.Parse(txtValor.Text);
-                mov.Categoria = 0; //cbCategoria.;
+                mov.Categoria = categoriaSelecionada.Id;    
                 mov.Descricao = txtDescricao.Text;
                 //Nome_tipo e Nome_categoria, não podem ser inseridas, apenas leitura
                 db.Movimentacoes.Add(mov);
@@ -47,6 +48,7 @@ namespace Trabalho3_carteira.View
                 MessageBox.Show("Movimentação salva com sucesso.");
                 
                 new TelaPrincipal().Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -73,16 +75,21 @@ namespace Trabalho3_carteira.View
 
                 DataContext db = new DataContext();
                 Movimentacoes mov = new Movimentacoes();
+
+                var categoriaSelecionada = cbCategoria.SelectedItem as Categorias;
+
                 mov.Data = dtpData.Value.Date;
                 mov.Tipo = 1;
                 mov.Valor = double.Parse(txtValor.Text);
-                mov.Categoria = 1;//(Int16)cbCategoria.SelectedValue;
+                mov.Categoria = categoriaSelecionada.Id;
                 mov.Descricao = txtDescricao.Text;
                 //Nome_tipo e Nome_categoria, não podem ser inseridas, apenas leitura
                 db.Movimentacoes.Add(mov);
                 db.SaveChanges();
                 MessageBox.Show("Movimentação salva com sucesso.");
-                Close();
+
+                new TelaPrincipal().Show();
+                this.Close();
             }
             catch (Exception ex)
             {
