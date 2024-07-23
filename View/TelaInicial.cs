@@ -135,6 +135,9 @@ namespace Trabalho3_carteira.View
                     this.Visible = false;
                     TelaSenha t = new TelaSenha();
                     t.ShowDialog();
+                    if (t.IsDisposed) { 
+                    Close();
+                    }
                 }
 
 

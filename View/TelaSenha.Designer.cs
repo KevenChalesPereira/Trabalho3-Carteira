@@ -85,6 +85,7 @@
             Name = "TelaSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Insira sua senha";
+            FormClosing += TelaSenha_FormClosing;
             Load += TelaSenha_Load;
             ResumeLayout(false);
             PerformLayout();

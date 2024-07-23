@@ -101,7 +101,7 @@ namespace Trabalho3_carteira.View
 
         private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-         
+            Dispose();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Trabalho3_carteira.View
         {
             InitializeComponent();
         }
-        
+
 
 
         private void TelaSenha_Load(object sender, EventArgs e)
@@ -67,7 +67,10 @@ namespace Trabalho3_carteira.View
                     this.Visible = false;
                     TelaPrincipal t = new TelaPrincipal();
                     t.ShowDialog();
-
+                    if (t.IsDisposed)
+                    {
+                        Close();
+                    }
                 }
 
 
@@ -77,7 +80,7 @@ namespace Trabalho3_carteira.View
             {
                 using (SHA256 sha256Hash = SHA256.Create())
                 {
-                    
+
                     byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
                     StringBuilder builder = new StringBuilder();
@@ -107,7 +110,7 @@ namespace Trabalho3_carteira.View
 
                 if (bEqual)
                 {
-                    
+
                     return 1;
 
 
@@ -119,6 +122,10 @@ namespace Trabalho3_carteira.View
 
         }
 
+        private void TelaSenha_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dispose();
+        }
     }
 }
 
