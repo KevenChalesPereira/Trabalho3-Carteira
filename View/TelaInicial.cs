@@ -16,7 +16,7 @@ namespace Trabalho3_carteira.View
 {
     public partial class TelaInicial : Form
     {
-        //apague este comentário depois
+        
         public TelaInicial()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace Trabalho3_carteira.View
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // ComputeHash - returns byte array
+              
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
                 StringBuilder builder = new StringBuilder();

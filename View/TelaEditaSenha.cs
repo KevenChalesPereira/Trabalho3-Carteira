@@ -62,10 +62,11 @@ namespace Trabalho3_carteira.View
 
                         CarteiraController.Alterar(usercarteira);
 
-                        MessageBox.Show("Senha alterada!");               
+                        MessageBox.Show("Senha alterada!");
                         this.Close();
-                       
-                    } else
+
+                    }
+                    else
                     {
                         MessageBox.Show("Senhas divergentes.");
                     }
@@ -122,7 +123,7 @@ namespace Trabalho3_carteira.View
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // ComputeHash - returns byte array
+             
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
                 StringBuilder builder = new StringBuilder();
@@ -153,15 +154,19 @@ namespace Trabalho3_carteira.View
 
             if (bEqual)
             {
-                
+
                 return 1;
 
 
             }
             else
-               
-            return 0;
+
+                return 0;
         }
 
+        private void TelaEditaSenha_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

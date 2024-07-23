@@ -19,7 +19,7 @@ namespace Trabalho3_carteira.View
         {
             InitializeComponent();
         }
-        //apague este comentário depois
+        
 
 
         private void TelaSenha_Load(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace Trabalho3_carteira.View
             {
                 using (SHA256 sha256Hash = SHA256.Create())
                 {
-                    // ComputeHash - returns byte array
+                    
                     byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
                     StringBuilder builder = new StringBuilder();

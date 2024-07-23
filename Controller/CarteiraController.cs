@@ -10,7 +10,7 @@ namespace Trabalho3_carteira.Controller
 {
     internal class CarteiraController
     {
-        //apague este comentário depois
+       
 
         public static List<Carteira>? vercarteira()
         {

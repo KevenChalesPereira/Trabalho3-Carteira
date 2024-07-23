@@ -12,9 +12,9 @@ namespace Trabalho3_carteira
         [STAThread]
         static void Main()
         {
-            //desabilitei a tela de senha apenas para realizar testes
+            
 
-            //Application.Run(new TelaMovimentacao());
+            
 
 
             ApplicationConfiguration.Initialize();
@@ -34,7 +34,6 @@ namespace Trabalho3_carteira
             }
             
             
-            //Application.Run(new TelaPrincipal());
 
             
             //To customize application configuration such as set high DPI settings or default font,
