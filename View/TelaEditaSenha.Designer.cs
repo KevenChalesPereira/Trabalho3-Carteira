@@ -81,7 +81,7 @@
             // 
             // lbl_confsen
             // 
-            lbl_confsen.Location = new Point(130, 131);
+            lbl_confsen.Location = new Point(147, 132);
             lbl_confsen.Margin = new Padding(3, 4, 3, 4);
             lbl_confsen.Name = "lbl_confsen";
             lbl_confsen.Size = new Size(114, 27);
@@ -90,7 +90,7 @@
             // 
             // lbl_SenAtual
             // 
-            lbl_SenAtual.Location = new Point(130, 8);
+            lbl_SenAtual.Location = new Point(147, 9);
             lbl_SenAtual.Margin = new Padding(3, 4, 3, 4);
             lbl_SenAtual.Name = "lbl_SenAtual";
             lbl_SenAtual.Size = new Size(114, 27);
@@ -99,7 +99,7 @@
             // 
             // lbl_NovaSen
             // 
-            lbl_NovaSen.Location = new Point(130, 69);
+            lbl_NovaSen.Location = new Point(147, 73);
             lbl_NovaSen.Margin = new Padding(3, 4, 3, 4);
             lbl_NovaSen.Name = "lbl_NovaSen";
             lbl_NovaSen.Size = new Size(114, 27);
@@ -119,7 +119,7 @@
             // 
             // Botãovis1
             // 
-            Botãovis1.Location = new Point(251, 7);
+            Botãovis1.Location = new Point(267, 7);
             Botãovis1.Margin = new Padding(3, 4, 3, 4);
             Botãovis1.Name = "Botãovis1";
             Botãovis1.Size = new Size(40, 31);
@@ -130,7 +130,7 @@
             // 
             // Botãovis2
             // 
-            Botãovis2.Location = new Point(251, 68);
+            Botãovis2.Location = new Point(267, 71);
             Botãovis2.Margin = new Padding(3, 4, 3, 4);
             Botãovis2.Name = "Botãovis2";
             Botãovis2.Size = new Size(40, 31);
@@ -141,7 +141,7 @@
             // 
             // Botãovis3
             // 
-            Botãovis3.Location = new Point(251, 135);
+            Botãovis3.Location = new Point(267, 132);
             Botãovis3.Margin = new Padding(3, 4, 3, 4);
             Botãovis3.Name = "Botãovis3";
             Botãovis3.Size = new Size(40, 31);
@@ -154,7 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(320, 255);
+            ClientSize = new Size(315, 255);
             Controls.Add(Botãovis3);
             Controls.Add(Botãovis2);
             Controls.Add(Botãovis1);
@@ -168,6 +168,7 @@
             Controls.Add(btn_salvar);
             Margin = new Padding(3, 4, 3, 4);
             Name = "TelaEditaSenha";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Altere sua senha:";
             Load += TelaEditaSenha_Load;
             ResumeLayout(false);
