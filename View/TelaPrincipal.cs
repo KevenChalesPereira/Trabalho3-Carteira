@@ -50,7 +50,7 @@ namespace Trabalho3_carteira.View
         private void datagMovimentacoes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEditar.Visible = true;
-           bntExcluir.Visible = true;
+            bntExcluir.Visible = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -80,22 +80,28 @@ namespace Trabalho3_carteira.View
 
         private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TelaEditaSenha telaedsenha = new TelaEditaSenha();
+            telaedsenha.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Deseja Excluir?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-           
+
             if (resultado == DialogResult.Yes)
             {
-                
+
                 Movimentacoes Excluir = (Movimentacoes)datagMovimentacoes.SelectedRows[0].DataBoundItem;
                 MovimentacoesController.Excluir(Excluir);
                 atualiza_dtg();
             }
-            
+
+        }
+
+        private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+         
         }
     }
 }

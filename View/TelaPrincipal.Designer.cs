@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             lblSaldo = new Label();
             button1 = new Button();
@@ -107,12 +107,12 @@
             datagMovimentacoes.ReadOnly = true;
             datagMovimentacoes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             datagMovimentacoes.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("High Tower Text", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new Font("High Tower Text", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            datagMovimentacoes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             datagMovimentacoes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datagMovimentacoes.Size = new Size(503, 150);
             datagMovimentacoes.TabIndex = 10;
@@ -294,6 +294,7 @@
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
+            FormClosing += TelaPrincipal_FormClosing;
             Load += TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)datagMovimentacoes).EndInit();
             ((System.ComponentModel.ISupportInitialize)movimentacoesBindingSource).EndInit();

@@ -107,7 +107,7 @@ namespace Trabalho3_carteira.View
 
                 if (bEqual)
                 {
-                    MessageBox.Show("Senha correta!");
+                    
                     return 1;
 
 

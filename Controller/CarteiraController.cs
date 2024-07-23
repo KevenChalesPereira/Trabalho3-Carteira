@@ -29,5 +29,14 @@ namespace Trabalho3_carteira.Controller
                 db.SaveChanges();
             }
         }
+
+        public static void Alterar(Carteira carteirauser)
+        {
+            using (DataContext db = new DataContext())
+            {
+                db.Carteira.Update(carteirauser);
+                db.SaveChanges();
+            }
+        }
     }
 }

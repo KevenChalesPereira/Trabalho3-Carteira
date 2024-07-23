@@ -36,9 +36,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(151, 31);
+            button2.Location = new Point(132, 23);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(42, 29);
+            button2.Size = new Size(37, 22);
             button2.TabIndex = 7;
             button2.Text = "👁️‍🗨️";
             button2.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(51, 66);
+            button1.Location = new Point(45, 50);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 6;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 33);
+            textBox1.Location = new Point(10, 25);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 27);
+            textBox1.Size = new Size(117, 23);
             textBox1.TabIndex = 5;
             textBox1.UseSystemPasswordChar = true;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -66,17 +69,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 10);
+            label1.Location = new Point(10, 8);
             label1.Name = "label1";
-            label1.Size = new Size(52, 20);
+            label1.Size = new Size(42, 15);
             label1.TabIndex = 4;
             label1.Text = "Senha:";
             // 
             // TelaSenha
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(221, 147);
+            ClientSize = new Size(193, 110);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
