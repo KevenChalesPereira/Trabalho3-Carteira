@@ -61,6 +61,7 @@ namespace Trabalho3_carteira.View
             {
                 MessageBox.Show($"Erro ao salvar a categoria: {ex.Message}");
             }
+            this.Dispose();
 }
     }
 }

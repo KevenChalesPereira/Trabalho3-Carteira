@@ -56,16 +56,23 @@ namespace Trabalho3_carteira.View
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Movimentacoes selecionada = (Movimentacoes)datagMovimentacoes.SelectedRows[0].DataBoundItem;
-            new TelaEditar(selecionada).ShowDialog();
-            this.Close();
+            TelaEditar te = new TelaEditar(selecionada);
+            te.ShowDialog();
+            if (te.IsDisposed)
+            {
+                atualiza_dtg();
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            new TelaMovimentacao().Show();
-            this.Close();
-            atualiza_dtg();
+            TelaMovimentacao tm = new TelaMovimentacao();
+            tm.ShowDialog();
+            if (tm.IsDisposed)
+            {
+                atualiza_dtg();
+            }
 
         }
 

@@ -52,23 +52,29 @@ namespace Trabalho3_carteira.View
             var catEdit = cbCategoriaEditar.SelectedItem as Categorias;
 
             movimentacoes.Id = edicao.Id;
-            movimentacoes.Data = edicao.Data; 
+            movimentacoes.Data = edicao.Data;
             movimentacoes.Valor = double.Parse(txtValor.Text);
             movimentacoes.Categoria = catEdit.Id;
             movimentacoes.Descricao = txtDesc.Text;
 
 
-           
 
-            if (rdDeposito.Checked){
+
+            if (rdDeposito.Checked)
+            {
 
                 movimentacoes.Tipo = 0;
             }
             else { movimentacoes.Tipo = 1; }
 
             MovimentacoesController.Editar(movimentacoes);
-            new TelaPrincipal().Show();
-            this.Close();
+            this.Dispose();
+        }
+
+
+        private void TelaEditar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

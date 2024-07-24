@@ -25,7 +25,7 @@ namespace Trabalho3_carteira.View
 
         private void TelaInicial_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = textBox3;
         }
 
 

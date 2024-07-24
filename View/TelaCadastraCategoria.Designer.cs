@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastraCategoria));
             lblID = new Label();
             lblCategoria = new Label();
             txtID = new TextBox();
@@ -88,8 +89,9 @@
             Controls.Add(txtID);
             Controls.Add(lblCategoria);
             Controls.Add(lblID);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaCadastraCategoria";
-            Text = "TelaCadastraCategoria";
+            Text = "Cadastre a categoria";
             Load += TelaCadastraCategoria_Load;
             ResumeLayout(false);
             PerformLayout();

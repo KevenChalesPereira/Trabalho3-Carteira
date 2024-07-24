@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEditar));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -169,10 +170,12 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "TelaEditar";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Editar";
+            Text = "Editar movimentação";
+            FormClosing += TelaEditar_FormClosing;
             Load += TelaEditar_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

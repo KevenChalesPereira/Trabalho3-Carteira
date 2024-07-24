@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaSenha));
             button2 = new Button();
             button1 = new Button();
             textBox1 = new TextBox();
@@ -36,9 +37,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(151, 31);
+            button2.Location = new Point(189, 39);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(42, 29);
+            button2.Size = new Size(52, 36);
             button2.TabIndex = 7;
             button2.Text = "👁️‍🗨️";
             button2.UseVisualStyleBackColor = true;
@@ -46,9 +48,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(51, 67);
+            button1.Location = new Point(64, 84);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(118, 36);
             button1.TabIndex = 6;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(11, 33);
+            textBox1.Location = new Point(14, 41);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 27);
+            textBox1.Size = new Size(165, 31);
             textBox1.TabIndex = 5;
             textBox1.UseSystemPasswordChar = true;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -66,22 +70,24 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(11, 11);
+            label1.Location = new Point(14, 14);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(52, 20);
+            label1.Size = new Size(64, 25);
             label1.TabIndex = 4;
             label1.Text = "Senha:";
             // 
             // TelaSenha
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(221, 147);
+            ClientSize = new Size(276, 184);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Margin = new Padding(2, 3, 2, 3);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 4, 2, 4);
             Name = "TelaSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Insira sua senha";

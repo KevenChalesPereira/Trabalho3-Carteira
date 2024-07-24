@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaMovimentacao));
             bntDeposito = new Button();
             bntRetirada = new Button();
             lblValor = new Label();
@@ -43,10 +44,9 @@
             // 
             // bntDeposito
             // 
-            bntDeposito.Location = new Point(11, 183);
-            bntDeposito.Margin = new Padding(2, 2, 2, 2);
+            bntDeposito.Location = new Point(59, 265);
             bntDeposito.Name = "bntDeposito";
-            bntDeposito.Size = new Size(78, 20);
+            bntDeposito.Size = new Size(111, 33);
             bntDeposito.TabIndex = 0;
             bntDeposito.Text = "Deposito";
             bntDeposito.UseVisualStyleBackColor = true;
@@ -54,10 +54,9 @@
             // 
             // bntRetirada
             // 
-            bntRetirada.Location = new Point(97, 183);
-            bntRetirada.Margin = new Padding(2, 2, 2, 2);
+            bntRetirada.Location = new Point(258, 265);
             bntRetirada.Name = "bntRetirada";
-            bntRetirada.Size = new Size(78, 20);
+            bntRetirada.Size = new Size(111, 33);
             bntRetirada.TabIndex = 1;
             bntRetirada.Text = "Retirada";
             bntRetirada.UseVisualStyleBackColor = true;
@@ -66,94 +65,87 @@
             // lblValor
             // 
             lblValor.AutoSize = true;
-            lblValor.Location = new Point(22, 24);
-            lblValor.Margin = new Padding(2, 0, 2, 0);
+            lblValor.Location = new Point(31, 40);
             lblValor.Name = "lblValor";
-            lblValor.Size = new Size(36, 15);
+            lblValor.Size = new Size(56, 25);
             lblValor.TabIndex = 2;
             lblValor.Text = "Valor:";
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(22, 62);
-            lblCategoria.Margin = new Padding(2, 0, 2, 0);
+            lblCategoria.Location = new Point(31, 103);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(61, 15);
+            lblCategoria.Size = new Size(92, 25);
             lblCategoria.TabIndex = 3;
             lblCategoria.Text = "Categoria:";
             // 
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(22, 100);
-            lblDescricao.Margin = new Padding(2, 0, 2, 0);
+            lblDescricao.Location = new Point(31, 167);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(58, 15);
+            lblDescricao.Size = new Size(88, 25);
             lblDescricao.TabIndex = 4;
             lblDescricao.Text = "Descrição";
             // 
             // txtValor
             // 
-            txtValor.Location = new Point(97, 24);
-            txtValor.Margin = new Padding(2, 2, 2, 2);
+            txtValor.Location = new Point(139, 40);
             txtValor.Name = "txtValor";
-            txtValor.Size = new Size(129, 23);
+            txtValor.Size = new Size(220, 31);
             txtValor.TabIndex = 5;
             // 
             // cbCategoria
             // 
             cbCategoria.DisplayMember = "Nome";
             cbCategoria.FormattingEnabled = true;
-            cbCategoria.Location = new Point(97, 62);
-            cbCategoria.Margin = new Padding(2, 2, 2, 2);
+            cbCategoria.Location = new Point(139, 103);
             cbCategoria.Name = "cbCategoria";
-            cbCategoria.Size = new Size(129, 23);
+            cbCategoria.Size = new Size(183, 33);
             cbCategoria.TabIndex = 6;
             cbCategoria.ValueMember = "Id";
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(97, 98);
-            txtDescricao.Margin = new Padding(2, 2, 2, 2);
+            txtDescricao.Location = new Point(139, 161);
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(129, 23);
+            txtDescricao.Size = new Size(220, 31);
             txtDescricao.TabIndex = 7;
             // 
             // bntCadastraCategoria
             // 
-            bntCadastraCategoria.Location = new Point(179, 164);
-            bntCadastraCategoria.Margin = new Padding(2, 2, 2, 2);
+            bntCadastraCategoria.Location = new Point(328, 103);
             bntCadastraCategoria.Name = "bntCadastraCategoria";
-            bntCadastraCategoria.Size = new Size(78, 42);
+            bntCadastraCategoria.Size = new Size(31, 33);
             bntCadastraCategoria.TabIndex = 8;
-            bntCadastraCategoria.Text = "Cadastrar Categoria";
+            bntCadastraCategoria.Text = "+";
             bntCadastraCategoria.UseVisualStyleBackColor = true;
             bntCadastraCategoria.Click += bntCadastraCategoria_Click;
             // 
             // lblCalendario
             // 
             lblCalendario.AutoSize = true;
-            lblCalendario.Location = new Point(22, 142);
-            lblCalendario.Margin = new Padding(2, 0, 2, 0);
+            lblCalendario.Location = new Point(31, 210);
             lblCalendario.Name = "lblCalendario";
-            lblCalendario.Size = new Size(133, 15);
+            lblCalendario.Size = new Size(201, 25);
             lblCalendario.TabIndex = 10;
             lblCalendario.Text = "Data da movimentação:";
             // 
             // dtpData
             // 
             dtpData.Format = DateTimePickerFormat.Short;
-            dtpData.Location = new Point(160, 136);
+            dtpData.Location = new Point(239, 210);
+            dtpData.Margin = new Padding(4, 5, 4, 5);
             dtpData.Name = "dtpData";
-            dtpData.Size = new Size(92, 23);
+            dtpData.Size = new Size(130, 31);
             dtpData.TabIndex = 11;
             // 
             // TelaMovimentacao
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(267, 226);
+            ClientSize = new Size(431, 331);
             Controls.Add(dtpData);
             Controls.Add(lblCalendario);
             Controls.Add(bntCadastraCategoria);
@@ -165,9 +157,9 @@
             Controls.Add(lblValor);
             Controls.Add(bntRetirada);
             Controls.Add(bntDeposito);
-            Margin = new Padding(2, 2, 2, 2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaMovimentacao";
-            Text = "Movimentação";
+            Text = "Cadastro de movimentações";
             Load += TelaMovimentacao_Load;
             ResumeLayout(false);
             PerformLayout();
